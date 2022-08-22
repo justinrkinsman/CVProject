@@ -29,6 +29,17 @@ export class GeneralInformation extends Component {
       this.changePhone()
     }
 
+    generalInfoEdit = (e) => {
+      let input = document.getElementById('generalInformationInput')
+      input.classList.remove('invisible')
+      let completed = document.getElementById('generalInformationCompleted')
+      completed.classList.add('invisible')
+      let submit = document.getElementById('generalInfoSubmit')
+      submit.classList.remove('invisible')
+      let edit = document.getElementById('generalInfoEdit')
+      edit.classList.add('invisible')
+    }
+
     changeName() {
       this.setState({
         name: document.getElementById('nameInput').value
@@ -75,7 +86,7 @@ export class GeneralInformation extends Component {
                 <p>Name: {this.state.name}</p>
                 <p>Email: {this.state.email}</p>
                 <p>Phone: {this.state.phone}</p>
-                <button type="submit" id="generalInfoEdit" className="invisible" >Edit</button>
+                <button type="submit" id="generalInfoEdit" className="invisible" onClick={this.generalInfoEdit}>Edit</button>
               </fieldset>
             </>
         )
