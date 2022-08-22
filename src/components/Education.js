@@ -25,6 +25,21 @@ export class Education extends Component {
       this.changeYears()
     }
 
+    educationEdit = (e) => {
+      e.preventDefault()
+      let input = document.getElementById('educationInput')
+      input.classList.remove('invisible')
+      let completed = document.getElementById('educationCompleted')
+      completed.classList.add('invisible')
+      let submit = document.getElementById('educationSubmit')
+      submit.classList.remove('invisible')
+      let edit = document.getElementById('educationEdit')
+      edit.classList.add('invisible')
+      this.changeSchool()
+      this.changeField()
+      this.changeYears()
+    }
+
     changeSchool() {
       this.setState({
         school: document.getElementById('schoolInput').value
@@ -71,7 +86,7 @@ export class Education extends Component {
                 <p>School: {this.state.school}</p>
                 <p>Field of Study: {this.state.field}</p>
                 <p>Year of Study: {this.state.years}</p>
-                <button type="submit" id="educationEdit" className="invisible" >Edit</button>
+                <button type="submit" id="educationEdit" className="invisible" onClick={this.educationEdit}>Edit</button>
               </fieldset>
             </>
         )
