@@ -69,13 +69,13 @@ export class GeneralInformation extends Component {
                     </label>
                   </div>
                   <button type="submit" id="generalInfoSubmit" onClick={this.generalInfoSubmission}>Submit</button>
-                  <button type="submit" id="generalInfoEdit" className="invisible" >Edit</button>
                 </form>
               </fieldset>
               <fieldset id="generalInformationCompleted" className="invisible">
                 <p>Name: {this.state.name}</p>
                 <p>Phone: {this.state.phone}</p>
                 <p>Email: {this.state.email}</p>
+                <button type="submit" id="generalInfoEdit" className="invisible" >Edit</button>
               </fieldset>
             </>
         )
