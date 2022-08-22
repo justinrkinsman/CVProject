@@ -70,7 +70,7 @@ export class Education extends Component {
             <fieldset id="educationCompleted" className="invisible">
                 <p>School: {this.state.school}</p>
                 <p>Field of Study: {this.state.field}</p>
-                <p>Year: {this.state.years}</p>
+                <p>Year of Study: {this.state.years}</p>
                 <button type="submit" id="educationEdit" className="invisible" >Edit</button>
               </fieldset>
             </>
