@@ -12,8 +12,8 @@ export class PracticalExperience extends Component{
     }
 
     practicalExperienceSubmission = (e) => {
-        e.preventDefault()
-        let input = document.getElementById('practicalExperienceInput')
+      e.preventDefault()
+      let input = document.getElementById('practicalExperienceInput')
       input.classList.add('invisible')
       let completed = document.getElementById('practicalExperienceCompleted')
       completed.classList.remove('invisible')
@@ -26,6 +26,22 @@ export class PracticalExperience extends Component{
       this.changeTask()
       this.changeYears()
       }
+
+      practicalExperienceEdit = (e) => {
+        e.preventDefault()
+        let input = document.getElementById('practicalExperienceInput')
+        input.classList.remove('invisible')
+        let completed = document.getElementById('practicalExperienceCompleted')
+        completed.classList.add('invisible')
+        let submit = document.getElementById('practicalExperienceSubmit')
+        submit.classList.remove('invisible')
+        let edit = document.getElementById('practicalExperienceEdit')
+        edit.classList.add('invisible')
+        this.changeCompany()
+        this.changeTitle()
+        this.changeTask()
+        this.changeYears()
+        }
 
       changeCompany() {
         this.setState({
@@ -85,7 +101,7 @@ export class PracticalExperience extends Component{
                 <p>Job Title: {this.state.title}</p>
                 <p>Job Tasks: {this.state.task}</p>
                 <p>Years Employed: {this.state.years}</p>
-                <button type="submit" id="practicalExperienceEdit" className="invisible" >Edit</button>
+                <button type="submit" id="practicalExperienceEdit" className="invisible" onClick={this.practicalExperienceEdit}>Edit</button>
             </fieldset>
             </>
         )
