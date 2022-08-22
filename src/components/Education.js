@@ -3,22 +3,22 @@ import React, { Component } from "react";
 export class Education extends Component {
     constructor(){
         super()
-        const educationText = [
-          {
-            school: '',
-            field: '',
-            years: '',
-          }
-        ]
+        this.state = {
+          school: '',
+          field: '',
+          years: '',
+        }
     }
 
     educationSubmission = (e) => {
       e.preventDefault()
+      let input = document.getElementById('educationInput')
+      input.classList.add('invisible')
     }
 
     render(){
         return(
-            <fieldset>
+            <fieldset id="educationInput">
               <legend>Education</legend>
               <form>
                 <div id="schoolForm">

@@ -1,24 +1,26 @@
 import React, { Component } from "react"
+import { useState } from 'react'
+import * as ReactDOM from 'react-dom'
 
 export class GeneralInformation extends Component {
     constructor(){
         super()
-        const generalInfoText = [
-          {
-            name: '',
-            email: '',
-            phone: '',
-          }
-        ]
+        this.state = {
+          name: '',
+          email: '',
+          phone: '',
+        }
     }
 
     generalInfoSubmission = (e) => {
       e.preventDefault()
+      let input = document.getElementById('generalInformationInput')
+      input.classList.add('invisible')
     }
 
     render(){
         return(
-            <fieldset>
+            <fieldset id="generalInformationInput">
               <legend>General Information</legend>
               <form id="generalInfo">
                 <div id="nameForm">

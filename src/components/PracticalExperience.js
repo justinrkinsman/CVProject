@@ -3,23 +3,23 @@ import React, { Component } from 'react'
 export class PracticalExperience extends Component{
     constructor(){
         super()
-        const practicalExperienceText = [
-            {
-                company: '',
-                title: '',
-                tasks: '',
-                years: '',
-            }
-        ]
+        this.state = {
+            company: '',
+            title: '',
+            task: '',
+            years: '',
+          }
     }
 
     practicalExperienceSubmission = (e) => {
         e.preventDefault()
+        let input = document.getElementById('practicalExperienceInput')
+        input.classList.add('invisible')
       }
 
     render(){
         return(
-            <fieldset>
+            <fieldset id="practicalExperienceInput">
               <legend>Practical Experience</legend>
               <form>
                 <div id="companyForm">
