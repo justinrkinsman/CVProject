@@ -3,6 +3,14 @@ import React, { Component } from 'react'
 export class PracticalExperience extends Component{
     constructor(){
         super()
+        const practicalExperienceText = [
+            {
+                company: '',
+                title: '',
+                tasks: '',
+                years: '',
+            }
+        ]
     }
 
     practicalExperienceSubmission = (e) => {

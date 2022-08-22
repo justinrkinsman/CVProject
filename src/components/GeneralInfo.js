@@ -3,6 +3,13 @@ import React, { Component } from "react"
 export class GeneralInformation extends Component {
     constructor(){
         super()
+        const generalInfoText = [
+          {
+            name: '',
+            email: '',
+            phone: '',
+          }
+        ]
     }
 
     generalInfoSubmission = (e) => {

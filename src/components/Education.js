@@ -3,6 +3,13 @@ import React, { Component } from "react";
 export class Education extends Component {
     constructor(){
         super()
+        const educationText = [
+          {
+            school: '',
+            field: '',
+            years: '',
+          }
+        ]
     }
 
     educationSubmission = (e) => {
