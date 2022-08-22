@@ -1,6 +1,4 @@
 import React, { Component } from "react"
-import { useState } from 'react'
-import * as ReactDOM from 'react-dom'
 
 export class GeneralInformation extends Component {
     constructor(){

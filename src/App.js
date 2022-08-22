@@ -5,13 +5,6 @@ import { Education } from "./components/Education"
 import { PracticalExperience } from "./components/PracticalExperience"
 
 export class App extends Component {
-  constructor(){
-    super()
-
-    /*this.state goes here*/
-  }
-
-  //functions goes here
 
   render() {
     return (
