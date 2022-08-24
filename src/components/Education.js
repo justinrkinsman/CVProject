@@ -1,16 +1,25 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-export class Education extends Component {
-    constructor(){
-        super()
-        this.state = {
-          school: '',
-          field: '',
-          years: '',
-        }
+export function Education() {
+    const [school, setSchool] = useState('')
+
+    const changeSchool = () => {
+      setSchool(document.getElementById('schoolInput').value)
     }
 
-    educationSubmission = (e) => {
+    const [field, setField] = useState('')
+
+    const changeField = () => {
+      setField(document.getElementById('fieldInput').value)
+    }
+
+    const [years, setYears] = useState('') 
+    
+    const changeYears = () => {
+      setYears(document.getElementById('yearsInput').value)
+    }
+
+    const educationSubmission = (e) => {
       e.preventDefault()
       let input = document.getElementById('educationInput')
       input.classList.add('invisible')
@@ -20,12 +29,12 @@ export class Education extends Component {
       submit.classList.add('invisible')
       let edit = document.getElementById('educationEdit')
       edit.classList.remove('invisible')
-      this.changeSchool()
-      this.changeField()
-      this.changeYears()
+      changeSchool()
+      changeField()
+      changeYears()
     }
 
-    educationEdit = (e) => {
+    const educationEdit = (e) => {
       e.preventDefault()
       let input = document.getElementById('educationInput')
       input.classList.remove('invisible')
@@ -35,60 +44,40 @@ export class Education extends Component {
       submit.classList.remove('invisible')
       let edit = document.getElementById('educationEdit')
       edit.classList.add('invisible')
-      this.changeSchool()
-      this.changeField()
-      this.changeYears()
+      changeSchool()
+      changeField()
+      changeYears()
     }
 
-    changeSchool() {
-      this.setState({
-        school: document.getElementById('schoolInput').value
-      })
-    }
-
-    changeField() {
-      this.setState({
-        field: document.getElementById('programInput').value
-      })
-    }
-
-    changeYears() {
-      this.setState({
-        years: document.getElementById('yearInput').value
-      })
-    }
-
-    render(){
-        return(
-            <>
-            <fieldset id="educationInput">
-              <legend>Education</legend>
-              <form>
-                <div id="schoolForm">
-                  <label htmlFor="schoolInput">School: 
-                    <input type="text" name="schoolInput" id="schoolInput"></input>
-                  </label>
-                </div>
-                <div id="programForm">
-                  <label htmlFor="programInput">Field of Study:                 
-                    <input type="text" name="programInput" id="programInput"></input>
-                  </label>
-                </div>
-                <div id="yearForm">
-                  <label htmlFor="yearInput">Year of Study: 
-                    <input type="text" name="yearInput" id="yearInput"></input>
-                  </label>
-                </div>
-                <button type="submit" id="educationSubmit" onClick={this.educationSubmission}>Submit</button>
-              </form>
-            </fieldset>
-            <fieldset id="educationCompleted" className="invisible">
-                <p>School: {this.state.school}</p>
-                <p>Field of Study: {this.state.field}</p>
-                <p>Year of Study: {this.state.years}</p>
-                <button type="submit" id="educationEdit" className="invisible" onClick={this.educationEdit}>Edit</button>
-              </fieldset>
-            </>
-        )
-    }
+    return(
+        <>
+        <fieldset id="educationInput">
+          <legend>Education</legend>
+          <form>
+            <div id="schoolForm">
+              <label htmlFor="schoolInput">School: 
+                <input type="text" name="schoolInput" id="schoolInput"></input>
+              </label>
+            </div>
+            <div id="programForm">
+              <label htmlFor="programInput">Field of Study:                 
+                <input type="text" name="programInput" id="programInput"></input>
+              </label>
+            </div>
+            <div id="yearForm">
+              <label htmlFor="yearInput">Year of Study: 
+                <input type="text" name="yearInput" id="yearInput"></input>
+              </label>
+            </div>
+            <button type="submit" id="educationSubmit" onClick={educationSubmission}>Submit</button>
+          </form>
+        </fieldset>
+        <fieldset id="educationCompleted" className="invisible">
+            <p>School: {school}</p>
+            <p>Field of Study: {field}</p>
+            <p>Year of Study: {years}</p>
+            <button type="submit" id="educationEdit" className="invisible" onClick={educationEdit}>Edit</button>
+          </fieldset>
+        </>
+    )
 }
