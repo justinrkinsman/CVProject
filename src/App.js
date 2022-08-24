@@ -1,12 +1,11 @@
-import React, { Component } from "react"
+import React from "react"
 import './App.css'
 import { GeneralInformation } from "./components/GeneralInfo"
 import { Education } from "./components/Education"
 import { PracticalExperience } from "./components/PracticalExperience"
 
-export class App extends Component {
+export const App = () => {
 
-  render() {
     return (
       <>
         <div id="fullApp">
@@ -20,4 +19,3 @@ export class App extends Component {
       </>
     )
   }
-}
