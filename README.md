@@ -1,2 +1,3 @@
 Live preview
-https://justinrkinsman.github.io/CVProject/
+https://justinrkinsman.github.io/CVProject-LivePreview/
+
